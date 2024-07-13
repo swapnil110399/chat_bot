@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  hospital_chatbot:
+    build:
+      context: ./hospital_chatbot
+    env_file:
+      - .env
+
+  chatbot_api:
+    build:
+      context: ./chatbot_api
+    env_file:
+      - .env
+    depends_on:
+      - hospital_chatbot
+    ports:
+      - "8000:8000"
+
+  chatbot_frontend:
+    build:
+      context: ./chatbot_frontend
+    env_file:
+      - .env
+    depends_on:
+      - chatbot_api
+    ports:
+      - "8501:8501"

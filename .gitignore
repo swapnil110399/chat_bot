@@ -1,0 +1,9 @@
+chroma_data/
+*.env
+notebooks/
+venv
+langchain_rag_chatbot_demo.gif
+tests/
+__pycache__/
+langchain_intro/
+hospital_neo4j_etl/
